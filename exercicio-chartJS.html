@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<style>
+.corpo{
+    display: flex;
+    justify-content: center;
+    margin: 100;
+    height: 500px;
+    width: 1350px;
+}
+.painel{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 500px;
+    width: 500px;
+    
+    
+    
+}
+
+.container{
+    display: flex;
+    margin: auto;
+    background-color: beige;
+    justify-content: center ;
+    align-items: center;    
+    position: relative;
+    align-items: center;
+  border-radius: 25px;
+  padding: 15px;
+  transition: 1s;
+}
+.container:hover{
+    -webkit-transform:scale(1.05);
+    -ms-transform: scale(1.02);
+    transform: scale(1.05);
+}
+
+
+</style>
+
+</head>
+<body class="corpo">
+
+    <div class="painel">
+<div class="container" >
+  <h3>graficos </h3>
+  <br>
+    <div class="grafico1" style="width: 500px;" >
+        <canvas id="myChart"></canvas>
+      </div>
+      <div class="grafico2 "style="width: 500px;"  >
+        <canvas id="myChart2"></canvas>
+      </div>
+    </div>
+</div>
+</body>
+</html>
+<script>
+    const labels = [
+      '12:00',
+      '13:00',
+      '14:00',
+      '15:00',
+      '16:00',
+      '17:00',
+    ];
+  
+    const data = {
+      labels: labels,
+      datasets: [{
+        label: 'Temperatura',
+        backgroundColor: 'rgb(255, 99, 132)',
+        borderColor: 'rgb(255, 99, 132)',
+        data: [0, 10, 5, 2, 20, 30, 45],
+      
+    },
+     {  
+        label: 'Umidade',
+        backgroundColor: '#0774ea',
+        borderColor: '#0774ea',
+        data: [2, 10, 5, 2, 20, 30, 45],
+      }]
+    };
+  
+    const config = {
+      type: 'line',
+      data: data,
+      options: {}
+    };
+  </script>
+  <script>
+    const myChart = new Chart(
+      document.getElementById('myChart'),
+      config
+    );
+  </script>
+ <script>
+    const labels2 = [
+      '12:00',
+      '13:00',
+      '14:00',
+      '15:00',
+      '16:00',
+      '17:00',
+    ];
+  
+    const data2 = {
+      labels: labels,
+      datasets: [{
+        label: 'My First dataset',
+        backgroundColor: 'rgb(255, 99, 132)',
+        borderColor: 'rgb(255, 99, 132)',
+        data: [0, 10, 5, 2, 20, 30, 45],
+      }]
+    };
+  
+    const config2 = {
+      type: 'bar',
+      data: data,
+      options: {}
+    };
+  </script>
+  <script>
+    const myChart2 = new Chart(
+      document.getElementById('myChart2'),
+      config2
+    );
+  </script>
+ 
+ 
+ 
